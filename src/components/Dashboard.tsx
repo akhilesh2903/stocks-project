@@ -91,11 +91,11 @@ const Dashboard = () => {
   };
 
   const handleLogout = () => {
-    navigate('/');
+    navigate('/login');
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background -mt-16 pt-16">
       {/* Header */}
       <header className="border-b border-accent/20 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -142,7 +142,12 @@ const Dashboard = () => {
               <Card key={sector.id} className="bg-card/80 backdrop-blur-sm border-accent/20 hover:border-accent/40 transition-all duration-300 shadow-elegant hover:shadow-glow">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className={`p-2 bg-${sector.gradient} rounded-lg`}>
+                    <div className={`p-2 rounded-lg ${sector.gradient === 'gradient-tech' ? 'bg-gradient-tech' :
+                      sector.gradient === 'gradient-health' ? 'bg-gradient-health' :
+                      sector.gradient === 'gradient-finance' ? 'bg-gradient-finance' :
+                      sector.gradient === 'gradient-energy' ? 'bg-gradient-energy' :
+                      sector.gradient === 'gradient-consumer' ? 'bg-gradient-consumer' :
+                      'bg-gradient-industrial'}`}>
                       <Icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -167,7 +172,12 @@ const Dashboard = () => {
                           className={`
                             transition-all duration-200 text-xs
                             ${isSelected 
-                              ? `bg-${sector.gradient} hover:opacity-80 border-transparent shadow-sm` 
+                              ? `${sector.gradient === 'gradient-tech' ? 'bg-gradient-tech' :
+                                sector.gradient === 'gradient-health' ? 'bg-gradient-health' :
+                                sector.gradient === 'gradient-finance' ? 'bg-gradient-finance' :
+                                sector.gradient === 'gradient-energy' ? 'bg-gradient-energy' :
+                                sector.gradient === 'gradient-consumer' ? 'bg-gradient-consumer' :
+                                'bg-gradient-industrial'} hover:opacity-80 border-transparent shadow-sm text-white` 
                               : 'hover:border-accent/60 hover:bg-accent/20'
                             }
                           `}

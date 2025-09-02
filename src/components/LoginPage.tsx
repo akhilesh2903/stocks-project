@@ -18,7 +18,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-dark flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-dark flex items-center justify-center p-4 -mt-16">
       <div className="absolute inset-0 bg-[url('/financial-bg.jpg')] bg-cover bg-center opacity-10"></div>
       
       <Card className="w-full max-w-md bg-card/95 backdrop-blur-sm border-accent/20 shadow-glow relative z-10">
